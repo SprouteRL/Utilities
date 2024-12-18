@@ -1,0 +1,8 @@
+Utilities/.vs
+Utilities/Utilities.sln
+Utilities/intermediates
+Utilities/build
+Utilities/Utilities/Utilities.vcxproj
+Utilities/Utilities/Utilities.vcxproj.filters
+Utilities/Utilities/Utilities.vcxproj.user
+Utilities/Utilities/src/main.cpp
