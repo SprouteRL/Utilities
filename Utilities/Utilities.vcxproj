@@ -152,6 +152,7 @@
     <ClCompile Include="utils\utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="dependencies\json.hpp" />
     <ClInclude Include="logger\logger.h" />
     <ClInclude Include="src\logger\logger.h" />
     <ClInclude Include="src\utils\utilities.h" />
