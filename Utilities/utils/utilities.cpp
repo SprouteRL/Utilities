@@ -16,6 +16,11 @@ std::string Utilities::WStringToString(const std::wstring& wstr)
 	return str;
 }
 
+std::string Utilities::PrintBool(const bool& boolean)
+{
+	return (boolean ? "True" : "False");
+}
+
 bool Utilities::SaveToJson(const nlohmann::json& jsonData, const std::string& filename)
 {
 	std::ofstream file(filename);

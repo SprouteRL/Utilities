@@ -21,6 +21,8 @@ public:
 	static std::wstring StringToWString(const std::string& str);
 	static std::string WStringToString(const std::wstring& str);
 
+	static std::string PrintBool(const bool& boolean);
+
 	static bool SaveToJson(const nlohmann::json& jsonData, const std::string& filename);
 	static nlohmann::json LoadFromJson(const std::string& filename);
 };
