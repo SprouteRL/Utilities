@@ -28,4 +28,5 @@ public:
 	static nlohmann::json LoadFromJson(const std::string& filename);
 
 	static std::string GetSpecialFolderPath(const std::string& folderName);
+	static bool StartProgram(const std::string& exePath);
 };

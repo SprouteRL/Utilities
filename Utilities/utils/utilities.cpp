@@ -74,3 +74,23 @@ std::string Utilities::GetSpecialFolderPath(const std::string& folderName)
 
 	return ""; // Return empty string if folderName is not recognized or fails
 }
+
+bool Utilities::StartProgram(const std::string& exePath)
+{
+	HINSTANCE result = ShellExecute(
+		nullptr,            // No parent window
+		L"open",             // Operation to perform
+		StringToWString(exePath).c_str(),    // Path to the executable
+		nullptr,            // Parameters (none in this case)
+		nullptr,            // Default working directory
+		SW_SHOWNORMAL       // Show the window in a normal state
+	);
+
+	// Check if ShellExecute was successful
+	if ((int)result <= 32) {
+		Logger::Error("Failed to start the executable. Error code: ", (int)result);
+		return false;
+	}
+
+	return true;
+}
