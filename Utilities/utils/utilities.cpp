@@ -46,3 +46,31 @@ nlohmann::json Utilities::LoadFromJson(const std::string& filename)
 		Logger::Error("Failed loading ", filename, " from json.");
 	}
 }
+
+std::string Utilities::GetSpecialFolderPath(const std::string& folderName)
+{
+	char path[MAX_PATH];
+
+	if (folderName == "LOCALAPPDATA") {
+		if (SUCCEEDED(SHGetFolderPathA(NULL, CSIDL_LOCAL_APPDATA, NULL, 0, path))) {
+			return std::string(path);
+		}
+	}
+	else if (folderName == "APPDATA") {
+		if (SUCCEEDED(SHGetFolderPathA(NULL, CSIDL_APPDATA, NULL, 0, path))) {
+			return std::string(path);
+		}
+	}
+	else if (folderName == "PROGRAMFILES") {
+		if (GetEnvironmentVariableA("ProgramFiles", path, MAX_PATH)) {
+			return std::string(path);
+		}
+	}
+	else if (folderName == "PROGRAMFILESX86") {
+		if (GetEnvironmentVariableA("ProgramFiles(x86)", path, MAX_PATH)) {
+			return std::string(path);
+		}
+	}
+
+	return ""; // Return empty string if folderName is not recognized or fails
+}

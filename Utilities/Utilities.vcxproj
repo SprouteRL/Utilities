@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="registry\registry.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\utils\utilities.cpp" />
     <ClCompile Include="utils\utilities.cpp" />
@@ -154,6 +155,7 @@
   <ItemGroup>
     <ClInclude Include="dependencies\json.hpp" />
     <ClInclude Include="logger\logger.h" />
+    <ClInclude Include="registry\registry.h" />
     <ClInclude Include="src\logger\logger.h" />
     <ClInclude Include="src\utils\utilities.h" />
     <ClInclude Include="utils\utilities.h" />
